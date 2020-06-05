@@ -8,7 +8,9 @@ Please make sure you add the App Groups in the XCode Project for sharing the con
 
 ## Install
 
-`cordova plugin add https://github.com/MattiaMalonni/cordova-plugin-userdefaults`
+```bash
+cordova plugin add https://github.com/MattiaMalonni/cordova-ios-plugin-userdefaults
+```
 
 ## Sample Code
 
