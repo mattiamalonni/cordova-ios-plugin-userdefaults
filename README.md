@@ -6,6 +6,10 @@ If you like to share some variables between your main app and an share extension
 
 Please make sure you add the App Groups in the XCode Project for sharing the container between apps.
 
+## Install
+
+`cordova plugin add https://github.com/MattiaMalonni/cordova-plugin-userdefaults`
+
 ## Sample Code
 
 The Plugin is only for iOS.
@@ -13,22 +17,22 @@ The Plugin is only for iOS.
 ### Save in UserDefaults
 
 ```javascript
-var options = { key: 'foo', value: 'bar', suite: 'group.com.example' };
+var options = { key: "foo", value: "bar", suite: "group.com.example" };
 
 window.AppGroupsUserDefaults.save(
   options,
-  () => console.log('success'),
-  () => console.log('error'),
+  () => console.log("success"),
+  () => console.log("error")
 );
 ```
 
 ### Load from UserDefaults
 
 ```javascript
-var options = { key: 'foo', suite: 'group.com.example' };
+var options = { key: "foo", suite: "group.com.example" };
 window.AppGroupsUserDefaults.load(
   options,
   (data) => console.log(data),
-  (error) => cosnole.log(error),
+  (error) => cosnole.log(error)
 );
 ```
