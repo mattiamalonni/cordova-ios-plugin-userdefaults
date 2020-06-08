@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1",
+  "version": "1.0.0",
   "name": "cordova-ios-plugin-userdefaults",
   "cordova_name": "App Groups UserDefault",
   "description": "This plugin is used to save and load data to the app groups. It is used to share data between App and Share Extension.",

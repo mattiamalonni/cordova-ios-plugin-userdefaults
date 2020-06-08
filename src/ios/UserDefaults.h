@@ -1,5 +1,5 @@
 #import <Cordova/CDVPlugin.h>
 
-@interface AppGroupsUserDefaults : CDVPlugin
+@interface UserDefaults : CDVPlugin
 - (void) save:(CDVInvokedUrlCommand*)command;
 @end

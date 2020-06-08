@@ -9,7 +9,7 @@ Please make sure you add the App Groups in the XCode Project for sharing the con
 ## Install
 
 ```bash
-cordova plugin add https://github.com/MattiaMalonni/cordova-ios-plugin-userdefaults
+cordova plugin add cordova-ios-plugin-userdefaults
 ```
 
 ## Sample Code
@@ -21,7 +21,7 @@ The Plugin is only for iOS.
 ```javascript
 var options = { key: "foo", value: "bar", suite: "group.com.example" };
 
-window.AppGroupsUserDefaults.save(
+window.UserDefaults.save(
   options,
   () => console.log("success"),
   () => console.log("error")
@@ -32,7 +32,7 @@ window.AppGroupsUserDefaults.save(
 
 ```javascript
 var options = { key: "foo", suite: "group.com.example" };
-window.AppGroupsUserDefaults.load(
+window.UserDefaults.load(
   options,
   (data) => console.log(data),
   (error) => cosnole.log(error)

@@ -1,23 +1,20 @@
-#import "AppGroupsUserDefaults.h"
+#import "UserDefaults.h"
 #import <Cordova/CDV.h>
 #import <Cordova/CDVPluginResult.h>
 
-@implementation AppGroupsUserDefaults
+@implementation UserDefaults
 
 - (void) save:(CDVInvokedUrlCommand*)command
 {
-    // load the options
     NSDictionary* arguments = [command.arguments objectAtIndex:0];
     NSString* key = [arguments objectForKey:@"key"];
     NSString* value = [arguments objectForKey:@"value"];
     NSString* suite = [arguments objectForKey:@"suite"];
 
-    // do the magic
     NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName:suite];
     [prefs setObject:value forKey:key];
     [prefs synchronize];
 
-    // give the callback
     CDVPluginResult* result = nil;
     if([[prefs stringForKey:key] isEqualToString:value])
     {
@@ -30,16 +27,13 @@
 
 - (void) load:(CDVInvokedUrlCommand*)command
 {
-    // load the options
     NSDictionary* arguments = [command.arguments objectAtIndex:0];
     NSString* key = [arguments objectForKey:@"key"];
     NSString* suite = [arguments objectForKey:@"suite"];
 
-    // do more magic
     NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName:suite];
     NSString* callbackResult = [prefs stringForKey:key];
 
-    // give the callback
     CDVPluginResult* result = nil;
     if(callbackResult != nil)
     {
